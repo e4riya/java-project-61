@@ -10,3 +10,5 @@
 [![asciicast](https://asciinema.org/a/u6pM2IREyFxcE1pVgIql6e9ek.svg)](https://asciinema.org/a/u6pM2IREyFxcE1pVgIql6e9ek)
 ## Arifmetic Progression
 [![asciicast](https://asciinema.org/a/vBfSAbShLCCTo627hKKkMcWL0.svg)](https://asciinema.org/a/vBfSAbShLCCTo627hKKkMcWL0)
+## Prime Number
+[![asciicast](https://asciinema.org/a/el2zOtjODwFz7lovFP07axxOX.svg)](https://asciinema.org/a/el2zOtjODwFz7lovFP07axxOX)

@@ -15,7 +15,7 @@ public class NodGame {
         while (cnt != 0) {
             numberA = randomizer.nextInt(1, 100);
             numberB = randomizer.nextInt(1, 100);
-            if (Nod(numberA,numberB) == 1) {
+            if (nod(numberA, numberB) == 1) {
                 continue;
             }
             System.out.println("Question: " + numberA + " " + numberB);
@@ -29,19 +29,19 @@ public class NodGame {
                     userInput.nextLine(); //отчистка потока ввода
                 }
             }
-            if (answer == Nod(numberA,numberB)) {
+            if (answer == nod(numberA, numberB)) {
                 System.out.println("Correct!");
                 cnt--;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + Nod(numberA, numberB) +
-                        "'" + "\nLet`s try again, " + Cli.userName + "!");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + nod(numberA, numberB)
+                        + "'" + "\nLet`s try again, " + Cli.userName + "!");
                 System.exit(0);
             }
         }
         System.out.println("Congratulations, " + Cli.userName + "!");
     }
 
-    private static int Nod(int a, int b) {
+    private static int nod(int a, int b) {
         if (a != 0 && b != 0) {
             while (a != b) {
                 if (a > b) {
