@@ -6,3 +6,6 @@
 [![asciicast](https://asciinema.org/a/Bx9fhqhH4uStoR1FTKSoghgvc.svg)](https://asciinema.org/a/Bx9fhqhH4uStoR1FTKSoghgvc)
 ## Calculator
 [![asciicast](https://asciinema.org/a/LT9HFAnWCGLMagQjbN4yyvJpj.svg)](https://asciinema.org/a/LT9HFAnWCGLMagQjbN4yyvJpj)
+## NOD
+[![asciicast](https://asciinema.org/a/u6pM2IREyFxcE1pVgIql6e9ek.svg)](https://asciinema.org/a/u6pM2IREyFxcE1pVgIql6e9ek)
+

@@ -26,7 +26,7 @@ public class CalcGame {
                     answer = userInput.nextInt();
                     break;
                 } catch (InputMismatchException e) {
-                    System.out.println("Incorrect input, enter number");
+                    System.out.print("Incorrect input, enter number: ");
                     userInput.nextLine(); //отчистка потока ввода
                 }
             }
