@@ -15,7 +15,7 @@ public class Cli {
     }
 
     public static void gameSelection(Scanner userInput) {
-        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n0 - Exit");
+        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n0 - Exit");
         int s = 0;
         while (true) {
             try {
@@ -43,6 +43,11 @@ public class Cli {
             case 4:
                 getName(userInput);
                 NodGame.start(userInput);
+                return;
+            case 5:
+                getName(userInput);
+                ArifmeticProgressionGame.start(userInput);
+                return;
             default:
                 System.out.println("Select a value from 0 to 3");
                 gameSelection(userInput);
