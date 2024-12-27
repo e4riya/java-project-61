@@ -1,44 +1,29 @@
 package hexlet.code;
 
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class NodGame {
-    public static void start(Scanner userInput) {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static String[][] start(Scanner userInput) {
+        String[][] qA = new String[3][2];
         Random randomizer = new Random();
         int numberA;
         int numberB;
         int answer;
-        int cnt = 3;
-        while (cnt != 0) {
+        int cnt = 0;
+        while (cnt <= 2) {
             numberA = randomizer.nextInt(1, 100);
             numberB = randomizer.nextInt(1, 100);
             if (nod(numberA, numberB) == 1) {
                 continue;
             }
-            System.out.println("Question: " + numberA + " " + numberB);
-            System.out.print("Your answer: ");
-            while (true) {
-                try {
-                    answer = userInput.nextInt();
-                    break;
-                } catch (InputMismatchException e) {
-                    System.out.print("Incorrect input, enter number: ");
-                    userInput.nextLine(); //отчистка потока ввода
-                }
-            }
-            if (answer == nod(numberA, numberB)) {
-                System.out.println("Correct!");
-                cnt--;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + nod(numberA, numberB)
-                        + "'" + "\nLet`s try again, " + Cli.userName + "!");
-                System.exit(0);
-            }
+            answer = nod(numberA, numberB);
+            qA[cnt][0] = numberA + " " + numberB;
+            qA[cnt][1] = answer + "";
+            cnt++;
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        return qA;
+
     }
 
     private static int nod(int a, int b) {

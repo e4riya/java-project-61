@@ -1,67 +1,38 @@
 package hexlet.code;
 
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class CalcGame {
     private static final String[] ARITHMETIC = {"+", "-", "*"};
 
-    public static void start(Scanner userInput) {
-        System.out.println("What is the result of the expression?");
+    public static String[][] start(Scanner userInput) {
+        String[][] qA = new String[3][2];
         Random randomizer = new Random();
         int index;
         int numberA;
         int numberB;
-        int answer;
-        int cnt = 3;
-        while (cnt != 0) {
+        int answer = 0;
+        int cnt = 0;
+        while (cnt <= 2) {
             numberA = randomizer.nextInt(0, 100);
             numberB = randomizer.nextInt(0, 100);
             index = randomizer.nextInt(0, 3);
-            System.out.print("Question: " + numberA + " " + ARITHMETIC[index] + " " + numberB
-                    + "\nYour answer: ");
-            while (true) {
-                try {
-                    answer = userInput.nextInt();
-                    break;
-                } catch (InputMismatchException e) {
-                    System.out.print("Incorrect input, enter number: ");
-                    userInput.nextLine(); //отчистка потока ввода
-                }
-            }
+
             switch (index) {
                 case 0:
-                    if (answer == numberA + numberB) {
-                        System.out.println("Correct!");
-                        cnt--;
-                    } else {
-                        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                                + (numberA + numberB) + "'.\nLet's try again, " + Cli.userName + "!");
-                        System.exit(0);
-                    }
+                    answer = numberA + numberB;
                     break;
                 case 1:
-                    if (answer == numberA - numberB) {
-                        System.out.println("Correct!");
-                        cnt--;
-                    } else {
-                        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                                + (numberA - numberB) + "'.\nLet's try again, " + Cli.userName + "!");
-                        System.exit(0);
-                    }
+                    answer = numberA - numberB;
                     break;
                 case 2:
-                    if (answer == numberA * numberB) {
-                        System.out.println("Correct!");
-                        cnt--;
-                    } else {
-                        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                                + (numberA * numberB) + "'.\nLet's try again, " + Cli.userName + "!");
-                        System.exit(0);
-                    }
+                    answer = numberA * numberB;
             }
+            qA[cnt][0] = numberA + " " + ARITHMETIC[index] + " " + numberB;
+            qA[cnt][1] = answer + "";
+            cnt++;
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        return qA;
     }
 }

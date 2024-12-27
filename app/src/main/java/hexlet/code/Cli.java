@@ -27,35 +27,34 @@ public class Cli {
                 userInput.nextLine(); //отчистка потока ввода
             }
         }
-        switch (s) {
-            case 0:
-                System.exit(0);
-            case 1:
-                getName(userInput);
-                return;
-            case 2:
-                getName(userInput);
-                EvenGame.start(userInput);
-                return;
-            case 3:
-                getName(userInput);
-                CalcGame.start(userInput);
-                return;
-            case 4:
-                getName(userInput);
-                NodGame.start(userInput);
-                return;
-            case 5:
-                getName(userInput);
-                ArifmeticProgressionGame.start(userInput);
-                return;
-            case 6:
-                getName(userInput);
-                PrimeNumberGame.start(userInput);
-                return;
-            default:
-                System.out.println("Select a value from 0 to 3");
-                gameSelection(userInput);
+        if (s == 0) {
+            System.exit(0);
+        } else if (s > 6) {
+            System.out.println("Select a value from 0 to 6");
+            gameSelection(userInput);
+        } else {
+            getName(userInput);
+            switch (s) {
+                case 2:
+                    System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                    Engine.startGame(userInput, EvenGame.start(userInput), Answers.YESorNO);
+                    return;
+                case 3:
+                    System.out.println("What is the result of the expression?");
+                    Engine.startGame(userInput, CalcGame.start(userInput), Answers.INT);
+                    return;
+                case 4:
+                    System.out.println("Find the greatest common divisor of given numbers.");
+                    Engine.startGame(userInput, NodGame.start(userInput), Answers.INT);
+                    return;
+                case 5:
+                    System.out.println("What number is missing in the progression? ");
+                    Engine.startGame(userInput, ArifmeticProgressionGame.start(userInput), Answers.INT);
+                    return;
+                case 6:
+                    System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                    Engine.startGame(userInput, PrimeNumberGame.start(userInput), Answers.YESorNO);
+            }
         }
     }
 }

@@ -7,5 +7,4 @@ public class App {
         Scanner userInput = new Scanner(System.in);
         Cli.gameSelection(userInput);
     }
-
 }
