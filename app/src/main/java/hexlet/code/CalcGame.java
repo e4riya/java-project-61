@@ -7,13 +7,13 @@ public class CalcGame {
     private static final String[] ARITHMETIC = {"+", "-", "*"};
 
     public static String[][] start(Scanner userInput) {
-        String[][] qA = new String[3][2];
+        int cnt = 0;
         Random randomizer = new Random();
-        int index;
         int numberA;
         int numberB;
+        int index;
         int answer = 0;
-        int cnt = 0;
+        String[][] qA = new String[3][2];
         while (cnt <= 2) {
             numberA = randomizer.nextInt(0, 100);
             numberB = randomizer.nextInt(0, 100);

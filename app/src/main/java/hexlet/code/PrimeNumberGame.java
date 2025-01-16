@@ -9,11 +9,11 @@ public class PrimeNumberGame {
                                      43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 
     public static String[][] start(Scanner userInput) {
-        String[][] qA = new String[3][2];
+        int cnt = 0;
         Random randomizer = new Random();
         int number;
         String answer;
-        int cnt = 0;
+        String[][] qA = new String[3][2];
         while (cnt <= 2) {
             number = randomizer.nextInt(0, 100);
             if (Arrays.binarySearch(primeNum, number) >= 0) {

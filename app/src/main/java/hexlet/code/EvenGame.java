@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class EvenGame {
     public static String[][] start(Scanner userInput) {
-        String[][] qA = new String[3][2];
+        int cnt = 0;
         Random randomizer = new Random();
         int number;
-        int cnt = 0;
         String answer;
+        String[][] qA = new String[3][2];
         while (cnt <= 2) {
             number = randomizer.nextInt(0, 1000);
             answer = number % 2 == 0 ? "yes" : "no";

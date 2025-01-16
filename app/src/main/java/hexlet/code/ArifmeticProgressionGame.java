@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class ArifmeticProgressionGame {
     public static String[][] start(Scanner userInput) {
-        String[][] qA = new String[3][2]; //question, answer x3
+        int cnt = 0;
         Random randomizer = new Random();
         int length;
         int startNum;
         int gap;
         int index;
-        int cnt = 0;
+        String[][] qA = new String[3][2]; //question, answer x3
         while (cnt <= 2) {
             length = randomizer.nextInt(5, 10);
             int[] array = new int[length];
