@@ -13,7 +13,7 @@ public class ArifmeticProgressionGame {
         int index;
         String[][] qA = new String[3][2]; //question, answer x3
         while (cnt <= 2) {
-            length = randomizer.nextInt(5, 10);
+            length = randomizer.nextInt(6, 10);
             int[] array = new int[length];
 
             startNum = randomizer.nextInt(0, 100);
