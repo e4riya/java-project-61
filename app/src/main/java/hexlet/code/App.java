@@ -14,7 +14,7 @@ public class App {
         int s = 0;
         while (true) {
             try {
-                s = Integer.parseInt(userInput.nextLine()); //<-
+                s = Integer.parseInt(userInput.nextLine());
                 if (s > 6) {
                     throw new NumberFormatException();
                 }
