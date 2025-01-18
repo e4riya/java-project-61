@@ -29,6 +29,7 @@ public class CalcGame {
                     break;
                 case 2:
                     answer = numberA * numberB;
+                    break;
                 default:
                     System.out.println("Unrealized operation");
                     System.exit(0);
