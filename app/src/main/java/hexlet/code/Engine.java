@@ -17,11 +17,11 @@ public class Engine {
                 cnt++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + data[cnt][1] + "'.\n"
-                        + "Let's try again, " + Cli.userName + "!");
+                        + "Let's try again, " + Cli.getUserName() + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        System.out.println("Congratulations, " + Cli.getUserName() + "!");
     }
 
 }

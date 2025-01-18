@@ -3,6 +3,14 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
+    private static final int EXIT = 0;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+
     public static void main(String[] args) {
         gameSelection();
     }
@@ -15,36 +23,36 @@ public class App {
         try {
             inputNum = Integer.parseInt(userInput.nextLine());
             switch (inputNum) {
-                case 0:
+                case EXIT:
                     System.exit(0);
                     return;
-                case 1:
-                    Cli.getName(userInput);
+                case GREET:
+                    Cli.inputName(userInput);
                     return;
-                case 2:
-                    Cli.getName(userInput);
+                case EVEN:
+                    Cli.inputName(userInput);
                     Engine.startGame(userInput, EvenGame.start(userInput));
                     return;
-                case 3:
-                    Cli.getName(userInput);
+                case CALC:
+                    Cli.inputName(userInput);
                     Engine.startGame(userInput, CalcGame.start(userInput));
                     return;
-                case 4:
-                    Cli.getName(userInput);
+                case GCD:
+                    Cli.inputName(userInput);
                     Engine.startGame(userInput, NodGame.start(userInput));
                     return;
-                case 5:
-                    Cli.getName(userInput);
+                case PROGRESSION:
+                    Cli.inputName(userInput);
                     Engine.startGame(userInput, ArifmeticProgressionGame.start(userInput));
                     return;
-                case 6:
-                    Cli.getName(userInput);
+                case PRIME:
+                    Cli.inputName(userInput);
                     Engine.startGame(userInput, PrimeNumberGame.start(userInput));
                     return;
                 default:
                     throw new NumberFormatException();
             }
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Not a valid number.");
             gameSelection();
         }
