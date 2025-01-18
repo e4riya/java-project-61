@@ -4,16 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class NodGame {
+    private static final int MAX_NUMBER = 100;
     public static String[][] start(Scanner userInput) {
         int cnt = 0;
         Random randomizer = new Random();
         int numberA;
         int numberB;
         int answer;
-        String[][] qA = new String[3][2];
+        String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
         while (cnt <= 2) {
-            numberA = randomizer.nextInt(1, 100);
-            numberB = randomizer.nextInt(1, 100);
+            numberA = randomizer.nextInt(1, MAX_NUMBER);
+            numberB = randomizer.nextInt(1, MAX_NUMBER);
             if (nod(numberA, numberB) == 1) {
                 continue;
             }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CalcGame {
     private static final String[] ARITHMETIC = {"+", "-", "*"};
-
+    private static final int MAX_NUMBER = 100;
     public static String[][] start(Scanner userInput) {
         int cnt = 0;
         Random randomizer = new Random();
@@ -13,11 +13,11 @@ public class CalcGame {
         int numberB;
         int index;
         int answer = 0;
-        String[][] qA = new String[3][2];
+        String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
         while (cnt <= 2) {
-            numberA = randomizer.nextInt(0, 100);
-            numberB = randomizer.nextInt(0, 100);
-            index = randomizer.nextInt(0, 3);
+            numberA = randomizer.nextInt(0, MAX_NUMBER);
+            numberB = randomizer.nextInt(0, MAX_NUMBER);
+            index = randomizer.nextInt(0, ARITHMETIC.length);
 
             switch (index) {
                 case 0:
