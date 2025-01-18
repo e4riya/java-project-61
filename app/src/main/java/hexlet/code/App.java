@@ -4,50 +4,49 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
-        gameSelection(userInput);
+        gameSelection();
     }
 
-    public static void gameSelection(Scanner userInput) {
+    public static void gameSelection() {
         System.out.println("Please enter the game number and press Enter."
                 + "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
-        int s = 0;
-        while (true) {
-            try {
-                s = Integer.parseInt(userInput.nextLine());
-                if (s > 6) {
+        Scanner userInput = new Scanner(System.in);
+        int inputNum = 0;
+        try {
+            inputNum = Integer.parseInt(userInput.nextLine());
+            switch (inputNum) {
+                case 0:
+                    System.exit(0);
+                    return;
+                case 1:
+                    Cli.getName(userInput);
+                    return;
+                case 2:
+                    Cli.getName(userInput);
+                    Engine.startGame(userInput, EvenGame.start(userInput));
+                    return;
+                case 3:
+                    Cli.getName(userInput);
+                    Engine.startGame(userInput, CalcGame.start(userInput));
+                    return;
+                case 4:
+                    Cli.getName(userInput);
+                    Engine.startGame(userInput, NodGame.start(userInput));
+                    return;
+                case 5:
+                    Cli.getName(userInput);
+                    Engine.startGame(userInput, ArifmeticProgressionGame.start(userInput));
+                    return;
+                case 6:
+                    Cli.getName(userInput);
+                    Engine.startGame(userInput, PrimeNumberGame.start(userInput));
+                    return;
+                default:
                     throw new NumberFormatException();
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
-                userInput.nextLine(); //отчистка потока ввода
             }
-        }
-        if (s == 0) {
-            System.exit(0);
-        }
-        Cli.getName(userInput);
-        switch (s) {
-            case 2:
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-                Engine.startGame(userInput, EvenGame.start(userInput));
-                return;
-            case 3:
-                System.out.println("What is the result of the expression?");
-                Engine.startGame(userInput, CalcGame.start(userInput));
-                return;
-            case 4:
-                System.out.println("Find the greatest common divisor of given numbers.");
-                Engine.startGame(userInput, NodGame.start(userInput));
-                return;
-            case 5:
-                System.out.println("What number is missing in the progression? ");
-                Engine.startGame(userInput, ArifmeticProgressionGame.start(userInput));
-                return;
-            case 6:
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-                Engine.startGame(userInput, PrimeNumberGame.start(userInput));
+        }catch (NumberFormatException e){
+            System.out.println("Not a valid number.");
+            gameSelection();
         }
     }
 }

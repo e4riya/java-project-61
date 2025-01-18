@@ -7,6 +7,7 @@ public class CalcGame {
     private static final String[] ARITHMETIC = {"+", "-", "*"};
     private static final int MAX_NUMBER = 100;
     public static String[][] start(Scanner userInput) {
+        System.out.println("What is the result of the expression?");
         int cnt = 0;
         Random randomizer = new Random();
         int numberA;
@@ -28,6 +29,9 @@ public class CalcGame {
                     break;
                 case 2:
                     answer = numberA * numberB;
+                default:
+                    System.out.println("Unrealized operation");
+                    System.exit(0);
             }
             qA[cnt][0] = numberA + " " + ARITHMETIC[index] + " " + numberB;
             qA[cnt][1] = answer + "";
