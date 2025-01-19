@@ -10,16 +10,12 @@ public class CalcGame {
         System.out.println("What is the result of the expression?");
         int cnt = 0;
         Random randomizer = new Random();
-        int numberA;
-        int numberB;
-        int index;
-        int answer = 0;
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
         while (cnt <= 2) {
-            numberA = randomizer.nextInt(0, MAX_NUMBER);
-            numberB = randomizer.nextInt(0, MAX_NUMBER);
-            index = randomizer.nextInt(0, ARITHMETIC.length);
-
+            int numberA = randomizer.nextInt(0, MAX_NUMBER);
+            int numberB = randomizer.nextInt(0, MAX_NUMBER);
+            int index = randomizer.nextInt(0, ARITHMETIC.length);
+            int answer = 0;
             switch (index) {
                 case 0:
                     answer = numberA + numberB;

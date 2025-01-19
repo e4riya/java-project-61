@@ -7,11 +7,10 @@ public class Engine {
 
     public static void startGame(Scanner userInput, String[][] data) {
         int cnt = 0;
-        String answer = "";
         while (cnt <= NUMBER_OF_ROUNDS - 1) {
             System.out.println("Question: " + data[cnt][0]);
             System.out.print("Your answer: ");
-            answer = userInput.nextLine(); // пользовательский ввод
+            String answer = userInput.nextLine(); // пользовательский ввод
             if (answer.equals(data[cnt][1])) {
                 System.out.println("Correct!");
                 cnt++;

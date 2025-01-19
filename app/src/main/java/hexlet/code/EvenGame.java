@@ -7,14 +7,12 @@ public class EvenGame {
     private static final int MAX_NUMBER = 1000;
     public static String[][] start(Scanner userInput) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int cnt = 0;
         Random randomizer = new Random();
-        int number;
-        String answer;
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
+        int cnt = 0;
         while (cnt <= 2) {
-            number = randomizer.nextInt(0, MAX_NUMBER);
-            answer = number % 2 == 0 ? "yes" : "no";
+            int number = randomizer.nextInt(0, MAX_NUMBER);
+            String answer = number % 2 == 0 ? "yes" : "no";
             qA[cnt][0] = number + "";
             qA[cnt][1] = answer;
             cnt++;

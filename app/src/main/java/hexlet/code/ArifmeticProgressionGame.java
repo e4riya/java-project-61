@@ -13,24 +13,20 @@ public class ArifmeticProgressionGame {
         System.out.println("What number is missing in the progression? ");
         int cnt = 0;
         Random randomizer = new Random();
-        int length;
-        int startNum;
-        int gap;
-        int index;
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2]; //question, answer x3
         while (cnt <= 2) {
-            length = randomizer.nextInt(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
+            int length = randomizer.nextInt(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
             int[] array = new int[length];
 
-            startNum = randomizer.nextInt(0, MAX_FIRST_NUM);
-            gap = randomizer.nextInt(1, MAX_GAP);
+            int startNum = randomizer.nextInt(0, MAX_FIRST_NUM);
+            int gap = randomizer.nextInt(1, MAX_GAP);
 
             for (int i = 0; i < array.length; i++) {
                 array[i] = startNum;
                 startNum += gap;
             }
             StringBuilder question = new StringBuilder();
-            index = randomizer.nextInt(1, length - 1);
+            int index = randomizer.nextInt(1, length - 1);
             question.append(array[0]);
             for (int i = 1; i < length; i++) {
                 if (i == index) {
