@@ -7,7 +7,7 @@ public class Engine {
 
     public static void startGame(Scanner userInput, String[][] data) {
         int cnt = 0;
-        while (cnt <= NUMBER_OF_ROUNDS - 1) {
+        while (cnt != NUMBER_OF_ROUNDS) {
             System.out.println("Question: " + data[cnt][0]);
             System.out.print("Your answer: ");
             String answer = userInput.nextLine(); // пользовательский ввод
@@ -16,11 +16,11 @@ public class Engine {
                 cnt++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + data[cnt][1] + "'.\n"
-                        + "Let's try again, " + Cli.getUserName() + "!");
+                        + "Let's try again, " + App.getUserName() + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + Cli.getUserName() + "!");
+        System.out.println("Congratulations, " + App.getUserName() + "!");
     }
 
 }
