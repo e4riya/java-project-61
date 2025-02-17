@@ -12,7 +12,7 @@ public class CalcGame {
         System.out.println("What is the result of the expression?");
         int cnt = 0;
         Random randomizer = new Random();
-        String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
+        String[][] questionAnswer = new String[Engine.NUMBER_OF_ROUNDS][2];
         while (cnt <= 2) {
             int numberA = randomizer.nextInt(0, MAX_NUMBER);
             int numberB = randomizer.nextInt(0, MAX_NUMBER);
@@ -32,10 +32,10 @@ public class CalcGame {
                     System.out.println("Unrealized operation");
                     System.exit(0);
             }
-            qA[cnt][0] = numberA + " " + ARITHMETIC[index] + " " + numberB;
-            qA[cnt][1] = answer + "";
+            questionAnswer[cnt][0] = numberA + " " + ARITHMETIC[index] + " " + numberB;
+            questionAnswer[cnt][1] = answer + "";
             cnt++;
         }
-        return qA;
+        return questionAnswer;
     }
 }

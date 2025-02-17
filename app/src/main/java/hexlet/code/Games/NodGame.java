@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class NodGame {
     private static final int MAX_NUMBER = 100;
+
     public static String[][] start(Scanner userInput) {
         System.out.println("Find the greatest common divisor of given numbers.");
         Random randomizer = new Random();

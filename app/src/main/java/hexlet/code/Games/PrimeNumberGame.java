@@ -1,14 +1,10 @@
 package hexlet.code.Games;
 
 import hexlet.code.Engine;
-
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class PrimeNumberGame {
-    private static final int[] PRIME_NUMS = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
-                                             43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
     private static final int MAX_NUMBER = 100;
 
     public static String[][] start(Scanner userInput) {
@@ -18,16 +14,23 @@ public class PrimeNumberGame {
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
         while (cnt <= 2) {
             int number = randomizer.nextInt(0, MAX_NUMBER);
-            String answer;
-            if (Arrays.binarySearch(PRIME_NUMS, number) >= 0) {
-                answer = "yes";
-            } else {
-                answer = "no";
-            }
+            String answer = isPrime(number) ? "yes" : "no";
             qA[cnt][0] = number + "";
             qA[cnt][1] = answer;
             cnt++;
         }
         return qA;
+    }
+
+    private static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

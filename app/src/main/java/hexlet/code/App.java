@@ -5,10 +5,10 @@ import hexlet.code.Games.CalcGame;
 import hexlet.code.Games.EvenGame;
 import hexlet.code.Games.NodGame;
 import hexlet.code.Games.PrimeNumberGame;
+
 import java.util.Scanner;
 
 public class App {
-    private static final String EXIT = "0";
     private static final String GREET = "1";
     private static final String EVEN = "2";
     private static final String CALC = "3";
@@ -29,9 +29,6 @@ public class App {
 
         String inputNum = userInput.nextLine();
         switch (inputNum) {
-            case EXIT:
-                System.exit(0);
-                return;
             case GREET:
                 inputName(userInput);
                 return;
@@ -56,8 +53,7 @@ public class App {
                 Engine.startGame(userInput, PrimeNumberGame.start(userInput));
                 return;
             default:
-                System.out.println("Not a valid input. Try again!");
-                gameSelection();
+                System.exit(0);
         }
     }
 

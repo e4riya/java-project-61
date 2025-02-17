@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class EvenGame {
     private static final int MAX_NUMBER = 1000;
+
     public static String[][] start(Scanner userInput) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random randomizer = new Random();
