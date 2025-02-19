@@ -30,30 +30,24 @@ public class App {
         String inputNum = userInput.nextLine();
         switch (inputNum) {
             case GREET:
-                inputName(userInput);
                 return;
             case EVEN:
-                inputName(userInput);
-                Engine.startGame(userInput, EvenGame.start(userInput));
+                Engine.startGame(userInput, EvenGame.generateQuestionsAndAnswers());
                 return;
             case CALC:
-                inputName(userInput);
-                Engine.startGame(userInput, CalcGame.start(userInput));
+                Engine.startGame(userInput, CalcGame.generateQuestionsAndAnswers());
                 return;
             case GCD:
-                inputName(userInput);
-                Engine.startGame(userInput, NodGame.start(userInput));
+                Engine.startGame(userInput, NodGame.generateQuestionsAndAnswers());
                 return;
             case PROGRESSION:
-                inputName(userInput);
-                Engine.startGame(userInput, ArifmeticProgressionGame.start(userInput));
+                Engine.startGame(userInput, ArifmeticProgressionGame.generateQuestionsAndAnswers());
                 return;
             case PRIME:
-                inputName(userInput);
-                Engine.startGame(userInput, PrimeNumberGame.start(userInput));
+                Engine.startGame(userInput, PrimeNumberGame.generateQuestionsAndAnswers());
                 return;
             default:
-                System.exit(0);
+                throw new RuntimeException("Invalid game selection: " + inputNum);
         }
     }
 

@@ -6,6 +6,7 @@ public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
 
     public static void startGame(Scanner userInput, String[][] data) {
+        App.inputName(userInput);
         int cnt = 0;
         while (cnt != NUMBER_OF_ROUNDS) {
             System.out.println("Question: " + data[cnt][0]);
@@ -17,7 +18,7 @@ public class Engine {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + data[cnt][1] + "'.\n"
                         + "Let's try again, " + App.getUserName() + "!");
-                System.exit(0);
+                break;
             }
         }
         System.out.println("Congratulations, " + App.getUserName() + "!");

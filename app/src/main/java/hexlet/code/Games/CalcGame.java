@@ -3,17 +3,16 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class CalcGame {
     private static final String[] ARITHMETIC = {"+", "-", "*"};
     private static final int MAX_NUMBER = 100;
-    public static String[][] start(Scanner userInput) {
+    public static String[][] generateQuestionsAndAnswers() {
         System.out.println("What is the result of the expression?");
         int cnt = 0;
         Random randomizer = new Random();
         String[][] questionAnswer = new String[Engine.NUMBER_OF_ROUNDS][2];
-        while (cnt <= 2) {
+        while (cnt < Engine.NUMBER_OF_ROUNDS) {
             int numberA = randomizer.nextInt(0, MAX_NUMBER);
             int numberB = randomizer.nextInt(0, MAX_NUMBER);
             int index = randomizer.nextInt(0, ARITHMETIC.length);
@@ -29,8 +28,8 @@ public class CalcGame {
                     answer = numberA * numberB;
                     break;
                 default:
-                    System.out.println("Unrealized operation");
-                    System.exit(0);
+                    throw new RuntimeException("Unrealized operation max index of operation is "
+                            + (ARITHMETIC.length - 1) + " but we have " + index);
             }
             questionAnswer[cnt][0] = numberA + " " + ARITHMETIC[index] + " " + numberB;
             questionAnswer[cnt][1] = answer + "";

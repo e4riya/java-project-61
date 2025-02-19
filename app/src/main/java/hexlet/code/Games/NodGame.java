@@ -3,17 +3,16 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class NodGame {
     private static final int MAX_NUMBER = 100;
 
-    public static String[][] start(Scanner userInput) {
+    public static String[][] generateQuestionsAndAnswers() {
         System.out.println("Find the greatest common divisor of given numbers.");
         Random randomizer = new Random();
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
         int cnt = 0;
-        while (cnt <= 2) {
+        while (cnt < Engine.NUMBER_OF_ROUNDS) {
             int numberA = randomizer.nextInt(1, MAX_NUMBER);
             int numberB = randomizer.nextInt(1, MAX_NUMBER);
             if (nod(numberA, numberB) == 1) {

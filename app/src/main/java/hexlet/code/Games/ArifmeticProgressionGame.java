@@ -3,7 +3,6 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class ArifmeticProgressionGame {
     private static final int MIN_LENGTH_PROGRESSION = 5;
@@ -11,12 +10,12 @@ public class ArifmeticProgressionGame {
     private static final int MAX_FIRST_NUM = 100;
     private static final int MAX_GAP = 10;
 
-    public static String[][] start(Scanner userInput) {
+    public static String[][] generateQuestionsAndAnswers() {
         System.out.println("What number is missing in the progression? ");
         int cnt = 0;
         Random randomizer = new Random();
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2]; //question, answer x3
-        while (cnt <= 2) {
+        while (cnt < Engine.NUMBER_OF_ROUNDS) {
             int length = randomizer.nextInt(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
             int[] array = new int[length];
 
