@@ -9,6 +9,7 @@ import hexlet.code.Games.PrimeNumberGame;
 import java.util.Scanner;
 
 public class App {
+    private static final String EXIT = "0";
     private static final String GREET = "1";
     private static final String EVEN = "2";
     private static final String CALC = "3";
@@ -29,6 +30,7 @@ public class App {
 
         String inputNum = userInput.nextLine();
         switch (inputNum) {
+            case EXIT:
             case GREET:
                 return;
             case EVEN:
