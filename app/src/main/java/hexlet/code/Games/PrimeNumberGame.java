@@ -11,7 +11,7 @@ public class PrimeNumberGame {
         int cnt = 0;
         Random randomizer = new Random();
         String[][] qA = new String[Engine.NUMBER_OF_ROUNDS][2];
-        while (cnt <= Engine.NUMBER_OF_ROUNDS) {
+        while (cnt < Engine.NUMBER_OF_ROUNDS) {
             int number = randomizer.nextInt(0, MAX_NUMBER);
             String answer = isPrime(number) ? "yes" : "no";
             qA[cnt][0] = number + "";
