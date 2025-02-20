@@ -31,7 +31,9 @@ public class App {
         String inputNum = userInput.nextLine();
         switch (inputNum) {
             case EXIT:
+                return;
             case GREET:
+                App.inputName(userInput);
                 return;
             case EVEN:
                 Engine.startGame(userInput, EvenGame.generateQuestionsAndAnswers());
